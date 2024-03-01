@@ -4,6 +4,17 @@ spring:
       enabled: ALWAYS
   datasource:
     url: "jdbc:mysql://localhost:3306/library"
-    username: root
+    username: "root"
     password: 1234
-    driver-class-name: "com.mysql.cj.jdbc.Driver"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none #스프링이 시작할 때 DB에 있는 테이블을 어떻게 처리할지 create : 기존테이블이있는경우 삭제후 다시생성 create-drop : 스프링이 종료될 때 테이블모두제거
+    properties:
+      hibernate:
+        show_sql: true # JPA를 사용해 DB에 SQL을 날릴때  SQL을 보여줄것인가.
+        format_sql: true #SQL을 보여줄때 포맷팅할것인가.
+        dialect: org.hibernate.dialect.MySQL8Dialect # 이옵션으로 DB를 특정하면 조금씩 다른 SQL을수정해준다. SQL마다 문법이다른데 그문법을 데이터베이스 종류에따라 바꿔준다.
+
+
+

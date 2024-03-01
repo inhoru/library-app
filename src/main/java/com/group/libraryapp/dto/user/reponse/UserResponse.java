@@ -18,6 +18,12 @@ public class UserResponse {
         return id;
     }
 
+    public UserResponse(User user){
+        this.id= user.getId();
+        this.name= user.getName();
+        this.age= user.getAge();
+    }
+
     public String getName() {
         return name;
     }
