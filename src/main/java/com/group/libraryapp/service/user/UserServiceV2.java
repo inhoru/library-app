@@ -8,7 +8,6 @@ import com.group.libraryapp.dto.user.request.UserUpdateRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.beans.Transient;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -50,7 +49,7 @@ public class UserServiceV2 {
                 .orElseThrow(IllegalArgumentException::new);
 
         user.updateName(request.getName());
-        userRepository.save(user);
+//        userRepository.save(user); // @Transactional을 사용한다면 트랜잭션을 사용하면 영속성컨텍스트 생성 종료된다면 삭제 컨텍스트 안에 @Entity이 들어와서 변경된다면 알아서 저장 된다. save불필요
     }
     @Transactional
     public void deleteUser(String name){

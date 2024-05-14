@@ -6,6 +6,8 @@ public class FruitUpdateRequest {
 
     private long id;
 
+    public FruitUpdateRequest() {
+    }
 
     public FruitUpdateRequest(long id, long sold) {
         this.id = id;

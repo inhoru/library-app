@@ -8,7 +8,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment와 동일 primary key는 자동생성되는 값
     private Long id = null;
     private Integer age; //필드와 컬럼이 완전히똑같으면 Column을 안해줘도된다.
-    @Column(nullable = false, length = 25, name = "name") // name varchar = 20 필드명과 테이블 컬럼명이같을경우name생략가능
+    @Column(nullable = false, length = 20, name = "name") // name varchar = 20 필드명과 테이블 컬럼명이같을경우name생략가능
     private String name;
 
     //JPA를 사용하기위해서는 기본생성자가 필수

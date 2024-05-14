@@ -5,12 +5,15 @@ import java.time.LocalDate;
 public class FruitCreateRequest {
     private String name;
     private Long price;
-    private LocalDate localDate;
+    private LocalDate warehousingDate;
 
-    public FruitCreateRequest(String name, Long price, LocalDate localDate) {
+    public FruitCreateRequest(String name, Long price, LocalDate warehousingDate) {
         this.name = name;
         this.price = price;
-        this.localDate = localDate;
+        this.warehousingDate = warehousingDate;
+    }
+
+    public FruitCreateRequest() {
     }
 
     public String getName() {
@@ -21,8 +24,8 @@ public class FruitCreateRequest {
         return price;
     }
 
-    public LocalDate getLocalDate() {
-        return localDate;
+    public LocalDate getWarehousingDate() {
+        return warehousingDate;
     }
 }
 
